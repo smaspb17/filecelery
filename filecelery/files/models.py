@@ -18,6 +18,9 @@ class File(models.Model):
         verbose_name='Обработан ли файл',
     )
 
+    def __str__(self):
+        return f'Файл с id = {self.pk}'
+
 
 # сигнал-вызов задачи для Celery
 @receiver(post_save, sender=File)
